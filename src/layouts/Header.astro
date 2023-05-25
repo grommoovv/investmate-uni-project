@@ -1,0 +1,25 @@
+---
+import Logo from '../components/Logo.astro'
+const navItems = [
+  { label: 'Главная', href: '' },
+  { label: 'О Продукте', href: '' },
+  { label: 'Как это работает', href: '' },
+  { label: 'Тарифы', href: '' },
+]
+---
+
+<header class='header'>
+  <div class='header__container w-[1704px] mx-auto'>
+    <div class='header__wrapper flex justify-between items-center h-[100px]'>
+      <Logo />
+
+      <ul class='header__menu-list flex gap-10'>
+        {
+          navItems.map((item) => (
+            <li class='header__menu-item'>{item.label}</li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</header>

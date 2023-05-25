@@ -1,0 +1,37 @@
+---
+const { text } = Astro.props
+---
+
+<button
+  class='button bg-white flex justify-center items-center w-[360px] h-[60px] rounded-full'
+>
+  <div class='button-i flex items-center gap-6'>
+    <div class='font-medium'>{text}</div>
+    <svg
+      width='30'
+      height='22'
+      viewBox='0 0 30 22'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+    >
+      <path
+        d='M0 11H28M28 11L20.1404 1M28 11L20.1404 21'
+        stroke='current'
+        stroke-width='2'></path>
+    </svg>
+  </div>
+</button>
+
+<style lang='scss'>
+  .button {
+    color: #1a1a29;
+    stroke: #1a1a29;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+      stroke: #fff;
+    }
+  }
+</style>

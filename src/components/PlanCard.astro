@@ -1,0 +1,89 @@
+---
+const { type, price, data } = Astro.props
+---
+
+<div class='plan-card bg-[#0D111F] rounded-[48px]'>
+  <div class='plan-card__wrapper'>
+    <div class='plan-card__type text-[32px] font-medium mb-[40px]'>{type}</div>
+    <div class='plan-card__pricing font-bold mb-[20px]'>
+      <span class='plan-card__price text-[44px]'>{price} ₽</span>
+      <span class='text-[#86888F]'>&nbsp; / Месяц</span>
+    </div>
+    <button
+      class='plan-card__button w-full h-[48px] rounded-2xl text-[18px] mb-[60px]'
+      >Подписаться</button
+    >
+    <ul class='plan-card__features-list flex flex-col gap-y-3'>
+      {
+        data.map((d) => (
+          <li class='plan-card__features-item flex items-center gap-4 '>
+            <svg
+              width='14'
+              height='10'
+              viewBox='0 0 14 10'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <path
+                fill-rule='evenodd'
+                clip-rule='evenodd'
+                d='M13.707 0.292787C13.8946 0.480314 14 0.734622 14 0.999786C14 1.26495 13.8946 1.51926 13.707 1.70679L5.6998 9.70679C5.51211 9.89426 5.25757 9.99957 4.99217 9.99957C4.72677 9.99957 4.47223 9.89426 4.28454 9.70679L0.280963 5.70679C0.0986418 5.51818 -0.00224262 5.26558 3.78364e-05 5.00339C0.00231829 4.74119 0.107581 4.49038 0.293155 4.30497C0.478729 4.11956 0.729765 4.01439 0.992197 4.01211C1.25463 4.00983 1.50746 4.11063 1.69623 4.29279L4.99217 7.58579L12.2917 0.292787C12.4794 0.105316 12.7339 0 12.9993 0C13.2647 0 13.5193 0.105316 13.707 0.292787Z'
+                fill='#059669'
+              />
+            </svg>
+            <span class='text-[16px] text-[#C2C3C7] font-bold'>{d.text}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<style lang='scss'>
+  .plan-card {
+    &:first-child {
+      .plan-card__type {
+        color: #0d9488;
+      }
+      .plan-card__button {
+        background-color: #0d9488;
+      }
+    }
+    &:nth-child(2) {
+      .plan-card__type {
+        color: #4f46e5;
+      }
+      .plan-card__button {
+        background-color: #4f46e5;
+      }
+    }
+
+    &:last-child {
+      .plan-card__type {
+        color: #d97706;
+      }
+      .plan-card__button {
+        background-color: #d97706;
+      }
+    }
+
+    &__wrapper {
+      padding: 60px;
+
+      li {
+        padding-bottom: 12px;
+        border-bottom: 1px solid #4a4d57;
+      }
+    }
+
+    &__button {
+      transition: all 0.3s ease;
+      &:hover {
+        scale: 1.1;
+      }
+      &:active {
+        scale: 0.98;
+      }
+    }
+  }
+</style>

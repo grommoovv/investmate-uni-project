@@ -1,0 +1,62 @@
+---
+import PlanCard from '../PlanCard.astro'
+const plans = [
+  {
+    type: 'Basic Plan',
+    price: '10 000',
+    data: [
+      { text: 'Комиссия 8% —  от сделки' },
+      { text: 'Техническая поддержка 24 / 7' },
+      { text: 'Технический анализ — 1 / 24ч' },
+      { text: 'Анализ портфеля — 1 / 24ч' },
+      { text: 'Анализ рынка — 1 / 24ч' },
+    ],
+  },
+  {
+    type: 'Pro Plan',
+    price: '20 000',
+    data: [
+      { text: 'Комиссия 5% —  от сделки' },
+      { text: 'Техническая поддержка 24 / 7' },
+      { text: 'Технический анализ — 6 / 24ч' },
+      { text: 'Анализ портфеля — 6 / 24ч' },
+      { text: 'Анализ рынка — 6 / 24ч' },
+      { text: 'Расширенная аналитика' },
+      { text: 'Автоматическая оценка рисков' },
+    ],
+  },
+  {
+    type: 'Ultra Pro Plan',
+    price: '40 000',
+    data: [
+      { text: 'Комиссия 3% —  от сделки' },
+      { text: 'Приоритетная техническая поддержка 24 / 7' },
+      { text: 'Приоритетное обслуживание 24 / 7 24 / 7' },
+      { text: 'Технический анализ — 12 / 24ч' },
+      { text: 'Анализ портфеля — 12 / 24ч' },
+      { text: 'Анализ рынка — 12 / 24ч' },
+      { text: 'Расширенная аналитика' },
+      { text: 'Автоматическая оценка рисков' },
+      { text: 'Расширенное управление портфелем' },
+      { text: 'Прогноз рынка' },
+    ],
+  },
+]
+---
+
+<section class='homepage__plans-section mb-[200px]'>
+  <h2 class='text-[60px] font-bold text-center'>Тарифные планы</h2>
+  <div class='grid-plans'>
+    {plans.map((p) => <PlanCard type={p.type} price={p.price} data={p.data} />)}
+  </div>
+</section>
+
+<style lang='scss'>
+  .grid-plans {
+    display: grid;
+    grid-template: auto / repeat(3, 1fr);
+    gap: 24px;
+
+    margin-top: 100px;
+  }
+</style>

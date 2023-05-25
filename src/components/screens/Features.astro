@@ -1,0 +1,51 @@
+---
+const features = [
+  { title: '+30%', text: 'Средний рост прибыли наших пользователей' },
+  { title: '96%', text: 'Успешных сделок с помощью InvestMate' },
+  {
+    title: '100%',
+    text: 'Эффективное распределение активов инвестиционного портфеля',
+  },
+]
+---
+
+<section class='homepage__features-section'>
+  <ul class='flex justify-center items-center gap-[200px] h-full'>
+    {
+      features.map((f) => (
+        <li class='text-center'>
+          <div class='text-[60px] font-bold'>{f.title}</div>
+          <div class='font-medium'>{f.text}</div>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style lang='scss'>
+  section {
+    height: 300px;
+    background: linear-gradient(
+      91.78deg,
+      #e6ddff 0%,
+      #ffffff 50%,
+      #d0bfff 100%
+    );
+    border-radius: 48px;
+    color: #1a1a29;
+
+    li {
+      &:first-child {
+        width: 230px;
+      }
+
+      &:nth-child(2) {
+        width: 220px;
+      }
+
+      &:last-child {
+        width: 370px;
+      }
+    }
+  }
+</style>

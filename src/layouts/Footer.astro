@@ -1,0 +1,39 @@
+---
+import Logo from '../components/Logo.astro'
+
+const authors = [
+  'Андрей Борисов,',
+  'Никита Братченко,',
+  'Георгий Громов,',
+  'Иван Лютов,',
+  'Артем Плешаков.',
+]
+---
+
+<footer class='footer'>
+  <div class='footer__container w-[1704px] mx-auto py-16'>
+    <div class='footer__wrapper'>
+      <Logo />
+      <span class='mt-[100px] font-[600]'>Группа ИВТ-162:</span>
+      <ul class='footer__authors-list flex gap-4 mt-4'>
+        {authors.map((a) => <li class='footer__authors-item'>{a}</li>)}
+      </ul>
+
+      <div class='footer__copy mt-[140px] text-[16px]'>
+        &copy; InvestMate 2023. Все права защищены.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style lang='scss'>
+  .footer {
+    border-top: 1px solid #494949;
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
