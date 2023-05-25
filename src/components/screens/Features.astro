@@ -10,41 +10,48 @@ const features = [
 ---
 
 <section class='homepage__features-section'>
-  <ul class='flex justify-center items-center gap-[200px] h-full'>
-    {
-      features.map((f) => (
-        <li class='text-center'>
-          <div class='text-[60px] font-bold'>{f.title}</div>
-          <div class='font-medium'>{f.text}</div>
-        </li>
-      ))
-    }
-  </ul>
+  <div class='w-[1704px] mx-auto'>
+    <ul class='flex justify-center items-center gap-[200px]'>
+      {
+        features.map((f) => (
+          <li class='text-center'>
+            <div class='text-[60px] font-bold'>{f.title}</div>
+            <div class='font-medium'>{f.text}</div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </section>
 
 <style lang='scss'>
   section {
-    height: 300px;
-    background: linear-gradient(
-      91.78deg,
-      #e6ddff 0%,
-      #ffffff 50%,
-      #d0bfff 100%
-    );
-    border-radius: 48px;
-    color: #1a1a29;
+		padding-top: 80px;
+    background: linear-gradient(180deg, #317d6b 0%, #191425 100%);
 
-    li {
-      &:first-child {
-        width: 230px;
-      }
+    ul {
+      height: 300px;
+      background: linear-gradient(
+        91.78deg,
+        #e6ddff 0%,
+        #ffffff 50%,
+        #d0bfff 100%
+      );
+      border-radius: 48px;
+      color: #1a1a29;
 
-      &:nth-child(2) {
-        width: 220px;
-      }
+      li {
+        &:first-child {
+          width: 230px;
+        }
 
-      &:last-child {
-        width: 370px;
+        &:nth-child(2) {
+          width: 220px;
+        }
+
+        &:last-child {
+          width: 370px;
+        }
       }
     }
   }

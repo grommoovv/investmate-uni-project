@@ -10,11 +10,11 @@ import Layout from '../layouts/Layout.astro'
 
 <Layout title='InvestMate.'>
   <main class='homepage'>
+    <Hero />
+    <Features />
     <div
       class='homepage__container flex flex-col gap-[100px] w-[1704px] mx-auto'
     >
-      <Hero />
-      <Features />
       <AboutProduct />
       <HowItWorks />
       <Cta />
@@ -22,9 +22,3 @@ import Layout from '../layouts/Layout.astro'
     </div>
   </main>
 </Layout>
-
-<style>
-  /* section {
-    background: linear-gradient(180deg, #191425 0%, #317d6b 50%, #1a1a29 100%);
-  } */
-</style>
